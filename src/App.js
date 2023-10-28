@@ -51,7 +51,7 @@ function SurveyContent() {
       
 
       {isSubmitted ? (
-        <p>Submitted!</p>
+        <p>Submitted for October 28, 2023!</p>
       ) : (
         <div>
           <SurveyQuestion
