@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div style={{ margin: '20px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-      <Title style={{ textAlign: 'center', fontFamily: 'Montserrat Light', fontWeight: 'lighter', marginBottom: '20px' }}>brottful</Title>
+      <Title style={{ textAlign: 'center', fontFamily: 'Montserrat', fontWeight: 'lighter', marginBottom: '20px' }}>brottful</Title>
       <Tabs activeKey={activeTab} onChange={handleTabChange}>
         <TabPane tab="Survey" key="survey">
           <div className="content" style={{ padding: '0px', background: '#fff' }}>
@@ -47,7 +47,7 @@ function SurveyContent() {
   };
 
   return (
-    <div className="content" style={{textAlign: 'center', padding: '0px', background: '#fff', fontFamily: 'Montserrat Light' }}>
+    <div className="content" style={{textAlign: 'center', padding: '0px', background: '#fff', fontFamily: 'Montserrat' }}>
       
 
       {isSubmitted ? (
@@ -95,7 +95,7 @@ function SurveyQuestion({ question, options }) {
   };
 
   return (
-    <Card title={question} style={{ marginBottom: '20px', textAlign: 'center'}}>
+    <Card title={question} style={{ marginBottom: '20px', textAlign: 'center', fontFamily: 'Montserrat'}}>
       <Radio.Group onChange={handleAnswerChange} value={selectedAnswer}>
         {options.map((option, index) => (
           <Radio.Button key={index} value={option}>

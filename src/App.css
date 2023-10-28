@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Montserrat Light';
+  font-family: 'Montserrat';
 }
 
 .App-logo {
@@ -15,7 +15,9 @@
 }
 
 /* Customize styles further as needed */
-
+body {
+  font-family: 'Montserrat Light', 'Montserrat', sans-serif;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
