@@ -3,6 +3,7 @@ import './App.css';
 
 import React, { useState } from 'react';
 import { Typography, Tabs, Card, Button, Radio } from 'antd';
+import ResultsPage from './ResultsPage';
 
 const { Title } = Typography;
 const { TabPane } = Tabs;
@@ -19,6 +20,15 @@ function App() {
     setActiveTab(key);
   };
 
+  const feels = {
+    data: [11, 10, 10],
+    labels: ['bad', 'meh', 'good']
+  };
+  const energy = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    data: [10, 15, 12, 18, 14, 20],
+  };
+
   return (
     <div style={{ margin: '20px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
       <Title style={{ textAlign: 'center', fontFamily: 'Montserrat Light', fontWeight: 'lighter', marginBottom: '20px' }}>brottful</Title>
@@ -29,8 +39,9 @@ function App() {
           </div>
         </TabPane>
         <TabPane tab="Results" key="results">
-          <div className="content" style={{ padding: '20px', background: '#fff' }}>
-            Results content goes here.
+          <div className="content" style={{ padding: '0px', background: '#fff' }}>
+            <h2>January 2023</h2>
+            <ResultsPage pieData={feels.data} pieLabels={feels.labels} lineData={energy.data} lineLabels={energy.labels}/>
           </div>
         </TabPane>
       </Tabs>
@@ -46,7 +57,7 @@ function SurveyContent() {
   };
 
   return (
-    <div className="content" style={{textAlign: 'center', padding: '20px', background: '#fff', fontFamily: 'Montserrat Light' }}>
+    <div className="content" style={{textAlign: 'center', padding: '0px', background: '#fff', fontFamily: 'Montserrat Light' }}>
       
 
       {isSubmitted ? (
@@ -105,5 +116,6 @@ function SurveyQuestion({ question, options }) {
     </Card>
   );
 }
+
 
 export default App;

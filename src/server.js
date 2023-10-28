@@ -1,49 +1,45 @@
+// server.js (Express.js server)
+
 const express = require('express');
-const { MongoClient } = require('mongodb'); // Import the MongoClient from 'mongodb'
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 8080;
 
-// Define the MongoDB connection URL and database name
-const mongoURL = 'mongodb://localhost:27017'; // Change to your MongoDB server URL
-const dbName = 'brottful';
+// Connect to MongoDB (replace 'your-database-url' with your actual MongoDB URL)
+mongoose.connect('mongodb://localhost:27017/brottful', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Define a route
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
+// Define the schema for survey responses
+const surveyResponseSchema = new mongoose.Schema({
+  timestamp: { type: Date, default: Date.now }, // Timestamp when the survey was submitted
+  feeling: String, // Response to the "I feel..." question
+  hoursSlept: String, // Response to the "Hours I slept last night..." question
+  motivation: String, // Response to the "I'm feeling motivated..." question
+  mealsToday: String, // Response to the "Meals I ate today..." question
+  energyLevel: String, // Response to the "My energy level is..." question
+  stressLevel: String // Response to the "My stress level is..." question
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+const SurveyResponse = mongoose.model('SurveyResponse', surveyResponseSchema);
 
-app.get('/api/data', (req, res) => {
-  const collection = db.collection('feelings'); // Replace 'yourCollectionName' with your collection name
+app.use(bodyParser.json());
 
-  collection.find({}).toArray((err, data) => {
+// Create a route to handle survey submissions
+app.post('/submit-survey', (req, res) => {
+  const surveyData = req.body; // Assuming the survey data is sent in the request body
+  const newSurveyResponse = new SurveyResponse(surveyData);
+
+  newSurveyResponse.save((err) => {
     if (err) {
-      console.error('Error retrieving data:', err);
-      res.status(500).json({ error: 'Internal Server Error' });
+      console.error(err);
+      res.status(500).send('Error saving survey response');
     } else {
-      res.json(data);
+      res.status(200).send('Survey response saved successfully');
     }
   });
 });
 
-// Connect to MongoDB
-MongoClient.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
-  if (err) {
-    console.error('Error connecting to MongoDB:', err);
-  } else {
-    const db = client.db(dbName);
-    console.log('Connected to MongoDB');
-
-    // Define your routes and other Express middleware here
-
-    // Start the Express server
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    });
-  }
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
