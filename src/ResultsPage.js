@@ -71,11 +71,36 @@ function ResultsPage() {
     data: [0, 2, 1, 1, 0, 1, 2],
   };
 
+  const encouragements = [
+    "Embrace a good night's sleep as a beautiful gift you give yourself, nurturing your mental well-being.",
+
+    "Remember to savor the simple joy of sipping water, an act of self-care that rejuvenates your mind and spirit.",
+
+    "Let your inner fire ignite your motivation, and watch your journey to well-being unfold with excitement.",
+
+    "Discover the pleasure of savoring wholesome meals, connecting with your body and nourishing your soul.",
+
+    "Feel the rhythm of life within you, dance to your own tune, and watch your energy soar.",
+
+    "Breathe deeply and mindfully, embracing each moment to find peace amidst life's ups and downs.",
+
+    "Create a cocoon of tranquility around your sleep, where your dreams and peace intermingle.",
+
+    "Cherish the moments that fill your heart with joy, creating a tapestry of well-being.",
+
+    "Nourish your body with love and kindness, and watch it bloom with vitality.",
+
+    "Savor each day, feeling stress melt away as you gracefully embrace the journey of well-being.",
+  ]
+
   return (
     <div style={{textAlign: 'center'}}>
       <TimeToggle onTimeChange={handleTimeChange} />
+      <br/>
+
+      <div style={{fontStyle: 'italic'}}>"{encouragements[Math.floor(Math.random() * encouragements.length)]}"</div>
       {selectedTime === 'month' ? (
-        <div>
+        <div>            
             <h2>October 2023</h2>
             <h3>How you felt</h3>
             <PieChart data={feels_month.data} labels={feels_month.labels} />

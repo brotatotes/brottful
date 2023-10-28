@@ -14,13 +14,13 @@ function TimeToggle({ onTimeChange }) {
         className={selectedTime === 'month' ? 'active' : ''}
         onClick={() => handleTimeChange('month')}
       >
-        Month
+        <div style={{textAlign: 'center', fontFamily: 'Montserrat'}}>Month</div>
       </button>
       <button
         className={selectedTime === 'week' ? 'active' : ''}
         onClick={() => handleTimeChange('week')}
       >
-        Week
+        <div style={{textAlign: 'center', fontFamily: 'Montserrat'}}>Week</div>
       </button>
     </div>
   );
