@@ -8,7 +8,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.button-custom{
+  background-color: #F6BD60; /* Set the desired button background color */
+  color: white; /* Set the text color to contrast with the background */
+  border: none; /* Optionally, remove the button border if desired */
+  /* Add more custom styling as needed */
+}
 
+.button-custom:hover {
+  background-color: #84A59D; /* Set the desired button background color */
+  color: white; /* Set the text color to contrast with the background */
+  border: none; /* Optionally, remove the button border if desired */
+  /* Add more custom styling as needed */
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

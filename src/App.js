@@ -78,7 +78,7 @@ function SurveyContent() {
             question="My stress level is..."
             options={['low', 'med', 'high']}
           />
-          <Button type="primary" onClick={handleSurveySubmit}>
+          <Button type="primary" className="button-custom" onClick={handleSurveySubmit}>
             Submit
           </Button>
         </div>
