@@ -20,8 +20,8 @@ const LineChart = ({ data, labels }) => {
           {
             label: 'Line Chart',
             data: data,
-            borderColor: 'blue',
-            fill: false, // Set to false to remove fill under the line
+            borderColor: '#84A59D',
+            fill: '#F7EDE2', // Set to false to remove fill under the line
           },
         ],
       },

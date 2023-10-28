@@ -19,7 +19,7 @@ const PieChart = ({ data, labels }) => {
         datasets: [
           {
             data: data,
-            backgroundColor: ['red', 'blue', 'green'], // Example colors
+            backgroundColor: ['#F28482', '#F5CAC3', '#84A59D'], // Example colors
           },
         ],
       },
@@ -37,6 +37,7 @@ const PieChart = ({ data, labels }) => {
             },
           },
         },
+        fontFamily: 'Montserrat, sans-serif',
       },
     });
 
