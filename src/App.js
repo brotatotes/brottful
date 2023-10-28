@@ -20,15 +20,6 @@ function App() {
     setActiveTab(key);
   };
 
-  const feels = {
-    data: [11, 10, 10],
-    labels: ['bad', 'meh', 'good']
-  };
-  const energy = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    data: [10, 15, 12, 18, 14, 20],
-  };
-
   return (
     <div style={{ margin: '20px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
       <Title style={{ textAlign: 'center', fontFamily: 'Montserrat Light', fontWeight: 'lighter', marginBottom: '20px' }}>brottful</Title>
@@ -40,8 +31,7 @@ function App() {
         </TabPane>
         <TabPane tab="Results" key="results">
           <div className="content" style={{ padding: '0px', background: '#fff' }}>
-            <h2>January 2023</h2>
-            <ResultsPage pieData={feels.data} pieLabels={feels.labels} lineData={energy.data} lineLabels={energy.labels}/>
+            <ResultsPage />
           </div>
         </TabPane>
       </Tabs>

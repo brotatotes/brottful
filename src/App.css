@@ -8,6 +8,15 @@
   pointer-events: none;
 }
 
+/* Add this to your CSS file */
+.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Customize styles further as needed */
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

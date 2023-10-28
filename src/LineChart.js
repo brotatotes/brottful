@@ -18,7 +18,7 @@ const LineChart = ({ data, labels }) => {
         labels: labels,
         datasets: [
           {
-            label: 'Line Chart',
+            label: 'energy level',
             data: data,
             borderColor: '#84A59D',
             fill: '#F7EDE2', // Set to false to remove fill under the line
@@ -33,6 +33,20 @@ const LineChart = ({ data, labels }) => {
           y: {
             beginAtZero: true,
           },
+          yAxes: [
+            {
+                ticks: {
+                    beginAtZero: true,
+                    callback: function (value) {
+                        // You can format the Y-axis labels as desired here
+                        if (value === 0) return 'low'; // Replace 0 with your custom label
+                        if (value === 1) return 'med'; // Replace 50 with your custom label
+                        if (value === 2) return 'high'; // Replace 100 with your custom label
+                        return value;
+                    },
+                }
+            }
+          ]
         },
       },
     });
