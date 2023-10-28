@@ -31,7 +31,7 @@ button-custom:hover {
 }
 
 /* Customize styles further as needed */
-body {
+body, h2, h3 {
   font-family: 'Montserrat Light', 'Montserrat', sans-serif;
 }
 
