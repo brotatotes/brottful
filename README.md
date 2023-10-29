@@ -2,6 +2,8 @@
 
 brottful.
 
+https://github.com/brotatotes/brottful/assets/6797157/3b3cb9eb-84a0-4926-a6f9-0292e14c6eef
+
 ## Inspiration
 Science shows that your eating and sleeping patterns can affect your mental wellness - such as your motivation, stress, and energy levels. However, keeping tabs on your wellness each day can be tasking. Sometimes, keeping up with a journal entry every day takes a lot of effort and dedication. This project was inspired by the lack of an easy way to track your personal mood and wellbeing without having to sit down and collect your thoughts. It’s a quick and easy way to collect data on yourself so that you can thoughtfully plan your wellness goals in various parts of your life using a data-driven approach.
 
